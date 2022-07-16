@@ -16,6 +16,6 @@ app.get("/chinese", (req, res) => {
 app.use(express.static('./assets'))
 app.use(express.static('./style'))
 
-app.listen(3000, () => {
+app.listen(80, () => {
   console.log("서버 가동")
 })
