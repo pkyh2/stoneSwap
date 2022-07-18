@@ -1,0 +1,66 @@
+<!doctype html>
+ <head>
+  <meta charset="UTF-8">
+<meta name="title" content="에코플래닛, ecoplanet, econft, esg, stone">
+<meta name="description" content="stone esg swap"> 
+<meta name="keywords" content="nft, game, blokchain, DeFi">
+<meta name="keywords" content="blockchain, nft, game, DeFi">
+<meta name="Robots" content="INDEX, FOLLOW">
+<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1, maximum-scale=1, user-scalable=no">
+
+
+
+	
+
+<style>
+	body{margin:0; padding:0;}
+	#background{width:100%;}
+	#swap_bg{width:840px; margin:0 auto; padding-top:30px;}
+	#swap_bg img{width:100%; }
+	#address_box{width:840px; margin:0 auto;  position:relative;}
+	.address_txt{position:absolute; margin-top:-128px; right:160px; font-size:15px; font-weight:500;}
+    button{background:none; border:none; cursor:pointer; width:116px; height:38px; float:right; margin:-138px 30px 0 0;}
+	button img{width:100%; }
+	input{opacity:0;}
+	@media screen and (max-width:768px){
+		#swap_bg{width:96%; margin:0 auto; padding-top:3%;}
+		#address_box{width:96%;}
+		.address_txt{float:right; margin-top:-14.4vw; right:20%; font-size:1.6vw; width:40%; overflow:hidden;}
+		button{width:15vw; height:5.1vw; float:right; margin:-16.4vw 4vw 0 0;}
+	}
+	@media screen and (max-width:480px){
+		.address_txt{margin-top:-14.8vw; right:20%; }
+	}
+	@media screen and (max-width:360px){
+		.address_txt{margin-top:-15.8vw; right:20%; }
+	}
+</style>
+
+<script>
+    function copy_to_clipboard(event) {
+        var copyText = event.target.parentNode.previousElementSibling;
+        copyText.select();
+        copyText.setSelectionRange(0, 99999);
+        document.execCommand("Copy");
+        alert('Copied, thank you.');
+    }
+</script>
+
+
+  <title>Stone X ESG Swap</title>
+ </head>
+ <body>
+	<div id="wrap">
+		<header id="background">
+			<div id="swap_bg">
+				<div><img src="./images/swap_eng02.png" alt="esg x stone swap"></div>
+			</div>
+			<div id="address_box">
+				<p class="address_txt">0x4f8473a5b70bd48D3cC6400706595B4BbD261fdA</p>
+				<input value="0x4f8473a5b70bd48D3cC6400706595B4BbD261fdA" readonly>
+				<button onclick="copy_to_clipboard(event)"><img src="./images/address_btn.png" alt="addres_btn"></button>
+			</div>
+		</header>
+	</div> 
+ </body>
+</html>
