@@ -9,6 +9,97 @@
   <body>
     <div class="container">
       <img class="stone" src="images/swap_ch02.png" alt="banner">
+      <div class="text-bl">
+        <p id="address"></p>
+      </div>
+      <button onclick="copyToClickBoard('#address')" class="btn">Copy</button>
     </div>
+    <script>
+      function copyToClickBoard(){
+        var content = document.getElementById('address').innerHTML;
+        // console.log(content)
+        navigator.clipboard.writeText(content)
+            .then(() => {
+            alert("Text copied to clipboard...")
+        })
+            .catch(err => {
+            console.log('Something went wrong', err);
+        })
+      
+      }
+    </script>
   </body>
+  <style>
+    .container {
+      margin-top: 1%;
+      position: relative;
+    }
+    .stone {
+      display: block;
+      margin: auto;
+      width: 50%;
+    }
+    .text-bl {
+      position: absolute;
+      display: block;
+      bottom: 6.5%;
+      left: 45%;
+      /* right: 27%; */
+      font-size: 1.8vmin;
+      /* background-color: black; */
+      /* color: white; */
+      /* padding-left: 20px;
+      padding-right: 20px; */
+      
+    }
+    
+
+    .container .btn {
+      position: absolute;
+      bottom: 7.0%;
+      right: 31%;
+      transform: translate(30%, -10%);
+      -ms-transform: translate(-50%, -50%);
+      background-color: #555;
+      color: white;
+      font-size: 2vmin;
+      padding: 8px 16px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;  
+    }
+
+    @media only screen and (max-width:400px) {
+      .container {
+        margin-top: 1%;
+        position: relative;
+      }
+      .stone {
+        display: block;
+        margin: auto;
+        width: 80%;
+      }
+      .text-bl {
+        position: absolute;
+        display: block;
+        bottom: 0%;
+        left: 19%;
+        font-size: 0.1px;
+      }
+      .container .btn {
+        position: absolute;
+        bottom: 5.6%;
+        right: 14%;
+        transform: translate(30%, -10%);
+        -ms-transform: translate(-50%, -50%);
+        background-color: #555;
+        color: white;
+        font-size: 0.1vmin;
+        padding: 3px 6px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;  
+      }
+    }
+  </style>
 </html>

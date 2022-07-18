@@ -9,18 +9,33 @@
   <body>
     <div class="container">
       <img class="stone" src="images/swap_eng02.png" alt="banner">
-      <div class="text-block">
+      <div class="text-bl">
         <p id="address">0x4f8473a5b70bd48D3cC6400706595B4BbD261fdA</p>
       </div>
-      <button onclick="copyToClipboard('#address')" class="btn">Copy</button>
+      <!-- <button class="btn">Copy</button> -->
+      <button onclick="copyToClickBoard('#address')" class="btn">Copy</button>
     </div>
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js">
+    <!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js">
       function copyToClipboard(element) {
         var $temp = $("<input>");
         $("body").append($temp);
         $temp.val($(element).text()).select();
         document.execCommand("copy");
         $temp.remove();
+      }
+    </script> -->
+    <script>
+      function copyToClickBoard(){
+        var content = document.getElementById('address').innerHTML;
+        // console.log(content)
+        navigator.clipboard.writeText(content)
+            .then(() => {
+            alert("Text copied to clipboard...")
+        })
+            .catch(err => {
+            console.log('Something went wrong', err);
+        })
+      
       }
     </script>
   </body>
@@ -55,7 +70,7 @@
       margin: auto;
       width: 50%;
     }
-    .text-block {
+    .text-bl {
       position: absolute;
       display: block;
       bottom: 6.5%;
@@ -66,7 +81,10 @@
       /* color: white; */
       /* padding-left: 20px;
       padding-right: 20px; */
+      
     }
+    
+
     .container .btn {
       position: absolute;
       bottom: 7.0%;
@@ -75,11 +93,44 @@
       -ms-transform: translate(-50%, -50%);
       background-color: #555;
       color: white;
-      font-size: 12px;
+      font-size: 2vmin;
       padding: 8px 16px;
       border: none;
       cursor: pointer;
-      border-radius: 5px;
+      border-radius: 5px;  
+    }
+
+    @media only screen and (max-width:400px) {
+      .container {
+        margin-top: 1%;
+        position: relative;
+      }
+      .stone {
+        display: block;
+        margin: auto;
+        width: 80%;
+      }
+      .text-bl {
+        position: absolute;
+        display: block;
+        bottom: 0%;
+        left: 19%;
+        font-size: 0.1px;
+      }
+      .container .btn {
+        position: absolute;
+        bottom: 5.6%;
+        right: 14%;
+        transform: translate(30%, -10%);
+        -ms-transform: translate(-50%, -50%);
+        background-color: #555;
+        color: white;
+        font-size: 0.1vmin;
+        padding: 3px 6px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;  
+      }
     }
   </style>
   <!-- <style>
