@@ -1,105 +1,66 @@
-<!DOCTYPE html>
-<html lang="ko">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../style/style.css">
-    <title>Stone X ESG SWAP</title>
-  </head>
-  <body>
-    <div class="container">
-      <img class="stone" src="images/swap_ch02.png" alt="banner">
-      <div class="text-bl">
-        <p id="address"></p>
-      </div>
-      <button onclick="copyToClickBoard('#address')" class="btn">Copy</button>
-    </div>
-    <script>
-      function copyToClickBoard(){
-        var content = document.getElementById('address').innerHTML;
-        // console.log(content)
-        navigator.clipboard.writeText(content)
-            .then(() => {
-            alert("Text copied to clipboard...")
-        })
-            .catch(err => {
-            console.log('Something went wrong', err);
-        })
-      
-      }
-    </script>
-  </body>
-  <style>
-    .container {
-      margin-top: 1%;
-      position: relative;
-    }
-    .stone {
-      display: block;
-      margin: auto;
-      width: 50%;
-    }
-    .text-bl {
-      position: absolute;
-      display: block;
-      bottom: 6.5%;
-      left: 45%;
-      /* right: 27%; */
-      font-size: 1.8vmin;
-      /* background-color: black; */
-      /* color: white; */
-      /* padding-left: 20px;
-      padding-right: 20px; */
-      
-    }
-    
+<!doctype html>
+ <head>
+  <meta charset="UTF-8">
+<meta name="title" content="에코플래닛, ecoplanet, econft, esg, stone">
+<meta name="description" content="stone esg swap"> 
+<meta name="keywords" content="nft, game, blokchain, DeFi">
+<meta name="keywords" content="blockchain, nft, game, DeFi">
+<meta name="Robots" content="INDEX, FOLLOW">
+<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1, maximum-scale=1, user-scalable=no">
 
-    .container .btn {
-      position: absolute;
-      bottom: 7.0%;
-      right: 31%;
-      transform: translate(30%, -10%);
-      -ms-transform: translate(-50%, -50%);
-      background-color: #555;
-      color: white;
-      font-size: 2vmin;
-      padding: 8px 16px;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;  
-    }
 
-    @media only screen and (max-width:400px) {
-      .container {
-        margin-top: 1%;
-        position: relative;
-      }
-      .stone {
-        display: block;
-        margin: auto;
-        width: 80%;
-      }
-      .text-bl {
-        position: absolute;
-        display: block;
-        bottom: 0%;
-        left: 19%;
-        font-size: 0.1px;
-      }
-      .container .btn {
-        position: absolute;
-        bottom: 5.6%;
-        right: 14%;
-        transform: translate(30%, -10%);
-        -ms-transform: translate(-50%, -50%);
-        background-color: #555;
-        color: white;
-        font-size: 0.1vmin;
-        padding: 3px 6px;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;  
-      }
+
+	
+
+<style>
+	body{margin:0; padding:0;}
+	#background{width:100%;}
+	#swap_bg{width:840px; margin:0 auto; padding-top:30px;}
+	#swap_bg img{width:100%; }
+	#address_box{width:840px; margin:0 auto; position:relative;}
+	.address_txt{position:absolute; margin-top:-113px; right:143px; font-size:15px; font-weight:500;}
+    button{background:none; border:none; cursor:pointer; width:116px; height:38px; float:right; margin:-122px 30px 0 0;}
+	button img{width:100%; }
+
+	@media screen and (max-width:768px){
+		#swap_bg{width:96%; margin:0 auto; padding-top:3%;}
+		#address_box{width:96%;}
+		.address_txt{float:right; margin-top:-12.5vw; right:18%; font-size:1.6vw; width:40%; overflow:hidden;}
+		button{width:15vw; height:5.1vw; float:right; margin:-14vw 2vw 0 0;}
+	}
+	@media screen and (max-width:480px){
+		.address_txt{margin-top:-13.4vw; right:18%; }
+	}
+	@media screen and (max-width:360px){
+		.address_txt{margin-top:-14vw; right:18%; }
+	}
+</style>
+
+<script>
+    function copy_to_clipboard(event) {
+        var copyText = event.target.parentNode.previousElementSibling;
+        copyText.select();
+        copyText.setSelectionRange(0, 99999);
+        document.execCommand("Copy");
+        alert('已复制，感谢');
     }
-  </style>
+</script>
+
+
+  <title>Stone X ESG Swap</title>
+ </head>
+ <body>
+	<div id="wrap">
+		<header id="background">
+			<div id="swap_bg">
+				<div><img src="/swap_ch02.png" alt="esg x stone swap"></div>
+			</div>
+			<div id="address_box">
+				<p class="address_txt">0x4f8473a5b70bd48D3cC6400706595B4BbD261fdA</p>
+				<input value="0x4f8473a5b70bd48D3cC6400706595B4BbD261fdA" readonly>
+				<button onclick="copy_to_clipboard(event)"><img src="/address_btn.png" alt="addres_btn"></button>
+			</div>
+		</header>
+	</div> 
+ </body>
 </html>

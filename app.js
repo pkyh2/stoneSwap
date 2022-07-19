@@ -5,9 +5,9 @@ const app = express();
 app.set("views", "./views");
 app.set("view engine", "ejs")
 
-app.get("/", (req, res) => {
-  res.render("home/index")
-})
+// app.get("/", (req, res) => {
+//   res.render("home/index")
+// })
 
 app.get("/english", (req, res) => {
   res.render("home/english")
